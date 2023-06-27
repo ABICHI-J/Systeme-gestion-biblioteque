@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\User;
 use App\Models\Emprunt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 
 class EmpruntController extends Controller
 {
@@ -38,7 +36,7 @@ class EmpruntController extends Controller
 
         // Marquer le livre comme emprunté
         $livre->is_borrowed = true;
-        $livre->user_id = $user->id; // Ajoutez cette ligne pour mettre à jour le user_id du livre
+        $livre->user_id = $user->id; // Mettre à jour le user_id du livre
         $livre->save();
 
         return redirect()->back()->with('success_emprunt', 'Livre emprunté avec succès.');

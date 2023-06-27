@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -19,8 +20,6 @@ use App\Http\Controllers\EmpruntController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-
 Route::get('/livres', [BookController::class, 'index'])->name('livres.index');
 Route::get('/livres/create', [BookController::class, 'create'])->name('livres.create');
 Route::post('/livres', [BookController::class, 'store'])->name('livres.store');
@@ -32,9 +31,13 @@ Route::put('/livres/{livre}', [BookController::class, 'update'])->name('livres.u
 Route::delete('/livres/{livre}', [BookController::class, 'destroy'])->name('livres.destroy');
 
 
+// Pour rediriger vers l'interface admin 
 
+/*
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // Vos routes d'administration ici
 });
+*/
 
 Auth::routes();
+

@@ -12,6 +12,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -50,10 +51,12 @@ class User extends Authenticatable
     }
 
     /**
-     * Obtient tous les emprunts associés à l'utilisateur.
+     * Get all the loans associated with the user.
      */
     public function emprunts(): HasMany
     {
         return $this->hasMany(Emprunt::class);
     }
+
+    
 }

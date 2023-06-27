@@ -6,15 +6,12 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    // Méthode pour afficher le tableau de bord de l'administration
+    // Possibles méthodes à ajouter pour gérer les fonctionnalités de l'administration
     public function dashboard()
     {
-        // Votre logique pour afficher le tableau de bord de l'administration
+        // Logique pour afficher le tableau de bord de l'administration
     }
-
-    // Autres méthodes pour gérer les fonctionnalités de l'administration
-
-    // Exemple :
+    
     public function users()
     {
         // Afficher la liste des utilisateurs dans l'administration

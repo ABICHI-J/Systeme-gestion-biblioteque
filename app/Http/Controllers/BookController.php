@@ -34,12 +34,11 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        // Créer le livre
+
         $book = new Book();
         $book->title = $request->input('title');
         $book->author = $request->input('author');
-
-        // Reste du code...
-
         $book->save();
 
         // Vérifier si l'utilisateur est authentifié et a emprunté le livre
